@@ -1,0 +1,20 @@
+.register{
+    width: 50%;
+
+}
+
+.input{
+    width: 50%;
+}
+
+.divBoton{
+    display: flex;
+    justify-content: center;
+
+}
+
+.boton{
+ 
+  width: 200px;
+}
+

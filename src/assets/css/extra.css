@@ -1,0 +1,25 @@
+p.sangría {
+  text-indent: 5%;
+}
+
+.hero-nature.carousel-hero.jumbotron {
+  font-family: monospace;
+}
+
+div.carousel-hero h1.hero-title, div-carousel-hero p.hero-subtitle {
+  font-family: monospace;
+}
+
+@media (max-width: 360px) {
+  div1-efecto {
+    width: 100%;
+  }
+}
+
+.img-article {
+  border-radius: 5%;
+  align-self: center;
+  width: 95%;
+  height: 95%;
+}
+

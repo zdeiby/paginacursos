@@ -1,0 +1,30 @@
+.tamano{
+   
+    height: 340px;
+    border-radius: 20px;
+}
+
+.division{
+   border: 1px solid white;
+   border-radius: 20px;
+}
+
+.espacio{
+    padding-bottom: 35px;
+}
+
+.h5{
+    color: white;
+    font-size: 30px;
+    padding-bottom: 5px;
+
+}
+
+.p{
+    color: white;
+    padding-top: 25px;
+}
+
+.boton{
+    padding-bottom: -105px;
+}
