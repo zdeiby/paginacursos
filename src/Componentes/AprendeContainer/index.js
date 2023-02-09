@@ -1,7 +1,7 @@
 import React from "react";
 import './AprendeContainer.css'
-import { Cards } from "./Cards/index";
-import { Cards2 } from "./Cards2/index";
+import { Cards } from "./Cards/index.js";
+import { Cards2 } from "./Cards2/index.js";
 
 function AprendeContainer(){
 

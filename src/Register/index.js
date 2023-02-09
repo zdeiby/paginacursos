@@ -1,7 +1,7 @@
 import React from "react";
-import { Footer } from "../Componentes/Footer";
-import { RegisterUI } from "./RegisterUI";
-import { Nav } from "../Componentes/Nav/index";
+import { Footer } from "../Componentes/Footer/index.js";
+import { RegisterUI } from "./RegisterUI.js";
+import { Nav } from "../Componentes/Nav/index.js";
 
 function Register(){
     return(

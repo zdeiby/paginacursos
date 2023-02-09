@@ -1,4 +1,4 @@
-import Carousel from 'react-bootstrap/Carousel';
+import {Carousel} from 'react-bootstrap';
 import js from './img/curso-javascript-banner.jpg'
 import ht from './img/maquetadoHTML-banner.png'
 import './Carrousel.css'

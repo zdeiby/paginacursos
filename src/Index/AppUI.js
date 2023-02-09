@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Nav } from '../Componentes/Nav';
-import { Header } from '../Componentes/Header';
-import { UsedBy } from '../Componentes/UsedBy'; 
-import { Carrousel } from '../Componentes/Carrousel';
-import { AprendeContainer } from '../Componentes/AprendeContainer';
-import { ColorCard } from '../Componentes/ColorCard';
-import { Form } from '../Componentes/Form/index';
-import { Subscribe } from '../Componentes/Subscribe';
-import { Footer } from '../Componentes/Footer';
+import { Nav } from '../Componentes/Nav/index.js';
+import { Header } from '../Componentes/Header/index.js';
+import { UsedBy } from '../Componentes/UsedBy/index.js'; 
+import { Carrousel } from '../Componentes/Carrousel/index.js';
+import { AprendeContainer } from '../Componentes/AprendeContainer/index.js';
+import { ColorCard } from '../Componentes/ColorCard/index.js';
+import { Form } from '../Componentes/Form/index.js';
+import { Subscribe } from '../Componentes/Subscribe/index.js';
+import { Footer } from '../Componentes/Footer/index.js';
 
 
 function AppUI(){
