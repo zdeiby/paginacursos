@@ -19,7 +19,7 @@ function Footer(){
                     <h3 class="fs-6 fw-bold">Acerca de</h3>
                     <ul class="list-unstyled">
                         <li><a href="#"><strong>Castelán Carpinteyro</strong></a></li>
-                        <li><a href="team.php">Equipo</a></li>
+                        <li><a href="#">Equipo</a></li>
                         <li><a href="#">Contacto</a></li>
                     </ul>
                 </div>

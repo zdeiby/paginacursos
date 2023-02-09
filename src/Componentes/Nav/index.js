@@ -32,7 +32,7 @@ function Nav(){
                     navigation</span><span className="navbar-toggler-icon"></span></button>
             <div className={`collapse navbar-collapse ${show}`} id="navcol-1">
                 <ul className="navbar-nav mx-auto">
-                 <li className="nav-item">  <Link to={'/'}> <a className="nav-link" href="index.php">Inicio</a></Link></li>
+                 <li className="nav-item">  <Link to={'/'}> <a>Inicio</a></Link></li>
                     <li className="nav-item"><a className="nav-link" href="#">Aprende a programar</a></li>
                     <li className="nav-item"><a className="nav-link" href="#">Servicios</a></li>
                     <li className="nav-item"><a className="nav-link" href="#">Productos</a></li>
