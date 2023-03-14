@@ -15,7 +15,7 @@ function Carrousel() {
         <Carousel.Caption className='espacio'>
           <h5 className='h5'>Curso de JavaScript</h5>
           <p className='p'>Dale vida y acción a tu página web con estos artículos que te prepararán para ser un desarrollador de JavaScript.</p>
-          <h2 className='boton'><a class="btn btn-primary btn-lg hero-button " role="button" href="">Conocer más</a></h2>
+          <h2 className="btn btn-primary btn-lg hero-button" role="button" >Conocer más</h2>
 
         </Carousel.Caption >
       </Carousel.Item>
@@ -28,7 +28,7 @@ function Carrousel() {
         <Carousel.Caption  className='espacio'>
           <h5 className='h5'>Maquetado HTML desde 0</h5>
           <p className='p'>En este artículo te guiaremos para que crees tu primer maquetado en HTML.</p>
-          <h2><a class="btn btn-primary btn-lg hero-button" role="button" href="">Conocer más</a></h2>
+          <h2 className="btn btn-primary btn-lg hero-button" role="button" >Conocer más</h2>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
