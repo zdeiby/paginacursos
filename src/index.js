@@ -9,6 +9,8 @@ import { AuthProvider } from './Login/peticion.js';
 import { Software } from './Software/Index';
 import { Git } from './Aprende/Git/Git';
 import {Aprende} from './Aprende/Aprende'
+import { NotFound } from './NotFound/Index';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +24,7 @@ root.render(
                 <Route path='/software' element={ <Software/>} ></Route>
                 <Route path='/aprende' element={ <Aprende/>} ></Route>
                 <Route path='/aprende/artículos/1/cómo-crear-un-repositorio-de-github/' element={ <Git/>} ></Route>
+                <Route path='*' element={ <NotFound/>} ></Route>
             </Routes>
         </AuthProvider>
         </Router>

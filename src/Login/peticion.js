@@ -30,8 +30,8 @@ function AuthProvider({children}){
        navigate('/')
     }
     const logout=() =>{
-        setUser(null);
-        localStorage.clear();
+        localStorage.clear()
+        ;setUser(null);
     }
     
     const auth={user,login,logout}
