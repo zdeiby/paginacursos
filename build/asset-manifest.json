@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6277fdb0.css",
-    "main.js": "/static/js/main.bb70c3da.js",
+    "main.js": "/static/js/main.ceabbec5.js",
     "static/media/maquetadoHTML-banner.png": "/static/media/maquetadoHTML-banner.c5387949d0394dd9113b.png",
     "static/media/hero-background-technology.jpg": "/static/media/hero-background-technology.5691be3df1a3b7f0554e.jpg",
     "static/media/hero-background-photography.jpg": "/static/media/hero-background-photography.a2257aec08646991607d.jpg",
@@ -12,10 +12,10 @@
     "static/media/1.png": "/static/media/1.8060c58c8457f4e26a70.png",
     "index.html": "/index.html",
     "main.6277fdb0.css.map": "/static/css/main.6277fdb0.css.map",
-    "main.bb70c3da.js.map": "/static/js/main.bb70c3da.js.map"
+    "main.ceabbec5.js.map": "/static/js/main.ceabbec5.js.map"
   },
   "entrypoints": [
     "static/css/main.6277fdb0.css",
-    "static/js/main.bb70c3da.js"
+    "static/js/main.ceabbec5.js"
   ]
 }
