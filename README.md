@@ -1,5 +1,7 @@
 ## Visita la web en https://pruebas-react.castelancarpinteyro.com/
 
+![image](https://user-images.githubusercontent.com/111442309/225583413-beceb1ea-e175-4a03-8f7b-e99e6f241486.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
