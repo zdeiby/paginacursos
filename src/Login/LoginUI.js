@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "./peticion";
 
+
 function LoginUI(){
 const auth= useAuth();
 
@@ -9,20 +10,43 @@ const auth= useAuth();
         password:'',
 
     });
+    const [get, setGet]= React.useState("false");
+    let url='https://api.castelancarpinteyro.com/message'
+    
+        async function leer() {
+        const response = await fetch(url, {
+          method: 'GET',
+        });
+        const data = await response.json();
+      
+        return setGet(await data)
+      }
+     
     function sendData(e){
         e.preventDefault();
         let username=info.email;
         let password=info.password;
-       auth.login({username, password}) 
+       
+    
+       if(get !== 'false' ){
+      
+        for(let i=0; i<get.body.length; i++){ 
+            if(get.body[i].email === username && get.body[i].password === password){
+            localStorage.getItem("correo",username)
+            auth.login({username, password},2) 
+        } }}
+
+
 //console.log(username, password)
     }
 
-    function almacen(e){
+   async function almacen(e){
+        
       setInfo({
             ...info,
             [e.target.name]:e.target.value,
             })
-       
+       await leer()
     }
 
   //  console.log(info)
