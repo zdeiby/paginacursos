@@ -24,7 +24,14 @@ function AuthProvider({children}){
     const navigate=useNavigate();
     const [user, setUser]= React.useState(null)
 
-    function login({username,password}){ 
+    function login({username,password},l=0){ 
+        console.log(username,password,l)
+        if(l===1){
+            navigate('/')
+            localStorage.getItem("correo",username)
+            setUser({username});
+        }
+        //console.log(get)
         if(get !== 'false' ){
             for(let i=0; i<get.body.length; i++){
                 if(get.body[i].email === username && get.body[i].password === password){
@@ -41,6 +48,7 @@ function AuthProvider({children}){
     const logout=() =>{
         localStorage.clear();
         setUser(null);
+        navigate('/')
     }
     
     const auth={user,login,logout}

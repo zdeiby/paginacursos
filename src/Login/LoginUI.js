@@ -14,7 +14,7 @@ const auth= useAuth();
         let username=info.email;
         let password=info.password;
        auth.login({username, password}) 
-console.log(username, password)
+//console.log(username, password)
     }
 
     function almacen(e){
@@ -24,6 +24,8 @@ console.log(username, password)
             })
        
     }
+
+  //  console.log(info)
   
     return(
         <section className="py-5">

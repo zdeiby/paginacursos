@@ -1,12 +1,17 @@
 import React from "react";
 import { Col ,Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../Login/peticion";
 import './Register.css'
 
+
 function RegisterUI(){
+    const auth= useAuth();
+    const navigate=useNavigate();
     const [get, setGet]= React.useState("false");
     const [info, setInfo]= React.useState('');
     const [post, setPost]= React.useState('');
+  
     let url='https://api.castelancarpinteyro.com/message'
     React.useEffect(()=> {
         async function leer() {
@@ -43,10 +48,17 @@ function sendData(e){
             return setPost(await data)
           }
        leer(info);
+       setGet(get.body.push(info))
+       let username=info.name;
+       let password=info.password;
+       auth.login({username, password},1) 
+     //  navigate('/login')
+       
     }
     }
     console.log(post)
     console.log(info)
+    console.log(get)
    
     
 }
@@ -87,11 +99,11 @@ function form(e){
             <form onSubmit={sendData}>
                     <div  className="d-flex flex-column justify-content-between align-items-center flex-lg-row " > 
                             <Col >
-                                 <div className="mb-3"><input onChange={form} className="form-control" type="text" name="name" placeholder="Name"/></div>
+                                 <div className="mb-3"><input required onChange={form} className="form-control" type="text" name="name" placeholder="Name"/></div>
                                  <div className=""><input  onChange={form} className="form-control" type="text" name="lastName" placeholder="Last name"/></div>
                                 </Col>
                                 <Col className="text-center  ">     
-                                <div className="mb-3"><input onChange={form} className="form-control" type="text" name="email" placeholder="Email"/></div>
+                                <div className="mb-3"><input required onChange={form} className="form-control" type="text" name="email" placeholder="Email"/></div>
                                 <div className=""><input onChange={form} className="form-control" type="password" name="password" placeholder="Password"/></div>
                                 </Col>
                     </div>
