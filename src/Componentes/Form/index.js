@@ -1,6 +1,21 @@
 import React from "react";
 
 function Form(){
+    const [inp, setInp]=React.useState('');
+
+    function datos(e){
+        setInp({
+            ...inp,
+            [e.target.name]:e.target.value
+        })
+        console.log(inp)
+    }
+///////////////////////// CORREO///////////////////
+    function envio(){
+     
+
+    }
+   
 
     return(
         <section className="py-5">
@@ -14,12 +29,12 @@ function Form(){
             <div className="row d-flex justify-content-center">
                 <div className="col-md-6 col-xl-4">
                     <div>
-                        <form className="p-3 p-xl-4" method="post">
+                        <form className="p-3 p-xl-4" onSubmit={envio} action="https://formsubmit.co/deibygj@hotmail.com" method="POST"> 
                          
-                            <div className="mb-3"><input className="form-control" type="text" id="name-1" name="name" placeholder="Nombre"/></div>
+                            <div className="mb-3"><input  onChange={datos} className="form-control" type="text" id="name-1" name="name" placeholder="Nombre"/></div>
                           
-                            <div className="mb-3"><input className="form-control" type="email" id="email-1" name="email" placeholder="Email"/></div>
-                            <div className="mb-3"><textarea className="form-control" id="message-1" name="message" rows="6" placeholder="Mensaje"></textarea></div>
+                            <div className="mb-3"><input onChange={datos} className="form-control" type="email" id="email-1" name="email" placeholder="Email"/></div>
+                            <div className="mb-3"><textarea onChange={datos} className="form-control" id="message-1" name="message" rows="6" placeholder="Mensaje"></textarea></div>
                             <div><button className="btn btn-primary shadow d-block w-100" type="submit">Enviar</button></div>
                         </form>
                     </div>

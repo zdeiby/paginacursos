@@ -10,7 +10,7 @@ function Subscribe(){
                     <h2 className="fw-bold mb-2">Suscríbete a nuestro newsletter</h2>
                     <p className="mb-0">Recibe novedades de artículos y guías.</p>
                 </div>
-                <form className="d-flex justify-content-center flex-wrap flex-lg-nowrap" method="post">
+                <form className="d-flex justify-content-center flex-wrap flex-lg-nowrap" action="https://formsubmit.co/deibygj@hotmail.com" method="POST">
                     <div className="my-2"><input className="border rounded-pill shadow-sm form-control" type="email" name="email" placeholder="Correo electrónico"/></div>
                     <div className="my-2"><button className="btn btn-primary shadow ms-2" type="submit">Suscríbete</button></div>
                 </form>
