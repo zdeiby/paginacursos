@@ -1,8 +1,63 @@
 import React from "react";
 import { Col ,Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import './Register.css'
 
 function RegisterUI(){
+    const [get, setGet]= React.useState("false");
+    const [info, setInfo]= React.useState('');
+    const [post, setPost]= React.useState('');
+    let url='https://api.castelancarpinteyro.com/message'
+    React.useEffect(()=> {
+        async function leer() {
+        const response = await fetch(url, {
+          method: 'GET',
+        });
+        const data =  await response.json();
+
+        return setGet(await data);
+       
+      
+      }
+      leer()
+    },[])
+
+console.log(get)
+   
+function sendData(e){
+    e.preventDefault();
+    if(get !=="false"){
+        if(get?.body[0].email === info.name || (!info.lastName || !info.email || !info.password) ){
+            console.log("no puedes registrarte ya existe el correo")
+    } else {
+        async function leer(info) {
+            const response = await fetch(url, {
+                method: 'POST', // or 'PUT'
+                body: JSON.stringify(info), // data can be `string` or {object}!
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+            })
+            const data = await response.json();
+          
+            return setPost(await data)
+          }
+       leer(info);
+    }
+    }
+    console.log(post)
+    console.log(info)
+   
+    
+}
+
+function form(e){
+    setInfo({
+        ...info,
+        [e.target.name]:e.target.value,
+        })
+}
+
     return(
         <React.Fragment>
            <section className="py-5">
@@ -29,19 +84,21 @@ function RegisterUI(){
     </section>
         
         <div className="container mb-4 input" >
+            <form onSubmit={sendData}>
                     <div  className="d-flex flex-column justify-content-between align-items-center flex-lg-row " > 
                             <Col >
-                                 <div className="mb-3"><input className="form-control" type="text" name="email" placeholder="Name"/></div>
-                                 <div className=""><input className="form-control" type="text" name="email" placeholder="Last name"/></div>
+                                 <div className="mb-3"><input onChange={form} className="form-control" type="text" name="name" placeholder="Name"/></div>
+                                 <div className=""><input  onChange={form} className="form-control" type="text" name="lastName" placeholder="Last name"/></div>
                                 </Col>
                                 <Col className="text-center  ">     
-                                <div className="mb-3"><input className="form-control" type="text" name="email" placeholder="Email"/></div>
-                                <div className=""><input className="form-control" type="password" name="password" placeholder="Password"/></div>
+                                <div className="mb-3"><input onChange={form} className="form-control" type="text" name="email" placeholder="Email"/></div>
+                                <div className=""><input onChange={form} className="form-control" type="password" name="password" placeholder="Password"/></div>
                                 </Col>
                     </div>
                      
                          <div className="mb-3 pt-4 divBoton " ><button className="btn btn-primary shadow d-block boton" type="submit">Sign up</button></div>
-                         <p className="text-muted divBoton ">Already have an account?&nbsp;<a href="login.html">Log in</a></p>
+                         <p className="text-muted divBoton ">Already have an account?&nbsp;<Link to='../login'>Log in</Link></p>
+             </form>
              </div>
            
         

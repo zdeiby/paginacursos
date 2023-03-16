@@ -5,9 +5,8 @@ import { useNavigate } from "react-router-dom";
 const AuthContext=React.createContext();
 
 function AuthProvider({children}){
-    const [get, setGet]= React.useState('');
-    let url='http://localhost:8000/mysql/'
-
+    const [get, setGet]= React.useState("false");
+    let url='https://api.castelancarpinteyro.com/message'
     React.useEffect(()=> {
         async function leer() {
         const response = await fetch(url, {
@@ -19,19 +18,29 @@ function AuthProvider({children}){
       }
       leer()
     },[])
-    console.log(get)
-   
+
+ 
+  
     const navigate=useNavigate();
     const [user, setUser]= React.useState(null)
 
-    function login({username}){
-        setUser({username});
-        localStorage.getItem("correo",username)
-       navigate('/')
+    function login({username,password}){ 
+        if(get !== 'false' ){
+            for(let i=0; i<get.body.length; i++){
+                if(get.body[i].email === username && get.body[i].password === password){
+                setUser({username});
+                localStorage.getItem("correo",username)
+                navigate('/')
+            } 
+            }
+           
+    }
+
+       
     }
     const logout=() =>{
-        localStorage.clear()
-        ;setUser(null);
+        localStorage.clear();
+        setUser(null);
     }
     
     const auth={user,login,logout}

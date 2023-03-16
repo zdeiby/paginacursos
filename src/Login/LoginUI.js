@@ -12,8 +12,9 @@ const auth= useAuth();
     function sendData(e){
         e.preventDefault();
         let username=info.email;
-       auth.login({username}) 
-
+        let password=info.password;
+       auth.login({username, password}) 
+console.log(username, password)
     }
 
     function almacen(e){
