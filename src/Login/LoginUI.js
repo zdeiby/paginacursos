@@ -59,7 +59,7 @@ const auth= useAuth();
   
     return(
         <section className="py-5">
-        <div className="container py-5">
+        <div className="container ">
             <div className="row mb-4 mb-lg-5">
                 <div className="col-md-8 col-xl-6 text-center mx-auto">
                     <p className="fw-bold text-success mb-2">Login</p>
@@ -67,7 +67,7 @@ const auth= useAuth();
                 </div>
             </div>
             <div className="row d-flex justify-content-center">
-                <div className="col-md-6 col-xl-4">
+                <div className="">
                     <div className="card">
                         <div className="card-body text-center d-flex flex-column align-items-center">
                             <div className="bs-icon-xl bs-icon-circle bs-icon-primary shadow bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi bi-person">
