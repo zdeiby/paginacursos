@@ -11,6 +11,7 @@ const auth= useAuth();
 
     });
     const [get, setGet]= React.useState("false");
+    const [noSame, setNoSame]=React.useState(false);
     let url='https://api.castelancarpinteyro.com/message'
     
         async function leer() {
@@ -34,14 +35,19 @@ const auth= useAuth();
             if(get.body[i].email === username && get.body[i].password === password){
             localStorage.getItem("correo",username)
             auth.login({username, password},2) 
-        } }}
+        }else{
+            console.log("error")
+            setNoSame(true)
+        }
+    
+    }}
 
 
 //console.log(username, password)
     }
 
    async function almacen(e){
-        
+        setNoSame(false)
       setInfo({
             ...info,
             [e.target.name]:e.target.value,
@@ -68,9 +74,9 @@ const auth= useAuth();
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
                                 </svg></div>
                             <form onSubmit={sendData}>
-                                
-                                <div className="mb-3"><input onChange={almacen} className="form-control" type="email" name="email" placeholder="Email"/></div>
-                                <div className="mb-3"><input onChange={almacen} className="form-control" type="password" name="password" placeholder="Password"/></div>
+                           {noSame? <p className="fw-bold text-success mb-2">Correo o contraseña erronea</p>:''} 
+                                <div className="mb-3"><input required onChange={almacen} className="form-control" type="email" name="email" placeholder="Email"/></div>
+                                <div className="mb-3"><input required onChange={almacen} className="form-control" type="password" name="password" placeholder="Password"/></div>
                                 <div className="mb-3"><button type="submit" className="btn btn-primary shadow d-block w-100" >Log in</button></div>
                                 <p className="text-muted">Forgot your password?</p>
                             </form>
