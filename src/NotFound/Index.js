@@ -8,9 +8,9 @@ import { Container } from "react-bootstrap";
 function NotFound(){
     return(
         <>
-        <Nav></Nav>
+     
             <img className="img404"src={imgError}/>
-        <Footer></Footer>
+
         </>
     )
 }

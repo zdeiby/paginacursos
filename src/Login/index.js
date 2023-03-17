@@ -6,9 +6,7 @@ import { LoginUI } from "./LoginUI.js";
 function Login(){
     return(
         <React.Fragment>
-        <Nav></Nav>
         <LoginUI></LoginUI>
-         <Footer></Footer>
         </React.Fragment>
        
     )

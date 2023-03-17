@@ -6,7 +6,6 @@ import { Container } from "react-bootstrap";
 function Software(){
     return(
         < >
-        <Nav></Nav>
         <div className="bg-dark">
         <Container className="text-center pt-5"> 
            <h3 className="text-success"> Carpeta de programas</h3>
@@ -26,7 +25,7 @@ function Software(){
             Recuerda que puedes contribuir con una <a href="https://www.paypal.com/paypalme/CastelanCarpinteyroD">donación en PayPal</a>; así podremos buscar más software y ponerlo disponible para la comunidad 🤓😎😉.
        </Container>
         </div>
-        <Footer></Footer>
+     
         </>
     )
 }

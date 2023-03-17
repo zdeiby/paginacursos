@@ -14,7 +14,6 @@ import { Footer } from '../Componentes/Footer/index.js';
 function AppUI(){
     return(
         <React.Fragment>
-        <Nav></Nav>
         <Header></Header>
         <div className='div'></div>
         <Carrousel></Carrousel>
@@ -35,7 +34,6 @@ function AppUI(){
         </section>
         <Form></Form>
         <Subscribe></Subscribe>
-        <Footer></Footer>
       </React.Fragment>
     )
 }

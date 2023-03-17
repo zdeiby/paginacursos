@@ -6,9 +6,8 @@ import { Nav } from "../Componentes/Nav/index.js";
 function Register(){
     return(
         <React.Fragment>
-        <Nav></Nav>
         <RegisterUI></RegisterUI>
-        <Footer></Footer>
+    
         </React.Fragment>
     )
 }
