@@ -1,3 +1,4 @@
+
 .pointer{
     cursor: pointer
 }
@@ -5,4 +6,8 @@
 .pointer:hover {
     color:white !important ;
     text-decoration: underline green;
+  }
+
+  .img-profile{
+    width: 30px;
   }

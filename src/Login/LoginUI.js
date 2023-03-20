@@ -12,7 +12,7 @@ const auth= useAuth();
     });
     const [get, setGet]= React.useState("false");
     const [noSame, setNoSame]=React.useState(false);
-    let url='https://api.castelancarpinteyro.com/message'
+    let url='https://api.castelancarpinteyro.com/users'
     
         async function leer() {
         const response = await fetch(url, {
@@ -27,14 +27,15 @@ const auth= useAuth();
         e.preventDefault();
         let username=info.email;
         let password=info.password;
+     
        
     
        if(get !== 'false' ){
       
         for(let i=0; i<get.body.length; i++){ 
             if(get.body[i].email === username && get.body[i].password === password){
-            localStorage.getItem("correo",username)
-            auth.login({username, password},2) 
+           let name=get.body[i].name
+            auth.login({username, password,name},2, ) 
         }else{
             console.log("error")
             setNoSame(true)

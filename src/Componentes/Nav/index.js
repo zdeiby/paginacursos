@@ -6,9 +6,12 @@ import '../../assets/css/extra.css'
 import '../../assets/css/uiverse.css'
 import { useAuth } from "../../Login/peticion";
 import './Nav.css'
+import profileImg from '../../assets/img/profileImages/308005691_464884012340731_7728597009113021700_n.jpg'
 
 
 function Nav(){
+    const [searchMenu, setSearchMenu] = React.useState(true);
+    const [showMenues,setShowMenu] = React.useState('');
     const [state, setState]= React.useState(true);
     const [show, setShow]= React.useState(true);
     const auth=useAuth();
@@ -17,7 +20,7 @@ function Nav(){
        
     }
     try{
-      auth.user={username:localStorage.getItem("correo")}
+      auth.user={username:localStorage.getItem("name")}
     }catch{
 
     }
@@ -33,9 +36,22 @@ function Nav(){
             setShow('')
         }
     }
+
+    
+    function menu(){
+        setSearchMenu(!searchMenu);
+        if(searchMenu == true){
+            setShowMenu('show')
+           
+        }
+        if(searchMenu !== true){
+            setShowMenu('')
+        }
+    }
+
     return(
         <React.Fragment>
-        <nav className="navbar navbar-dark navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
+        <nav className="navbar navbar-dark navbar-expand-md sticky-top navbar-shrink py-3 pb-5" id="mainNav">
         <div className="container"><Link to='/'className="navbar-brand d-flex align-items-center" href="/">
             <span className="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon rueda-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi bi-code-slash">
@@ -46,15 +62,28 @@ function Nav(){
                     navigation</span><span className="navbar-toggler-icon"></span></button>
             <div className={`collapse navbar-collapse ${show}`} id="navcol-1">
                 <ul className="navbar-nav mx-auto">
-                 <li className="nav-item">  <Link className="nav-link" to={'/'}> Inicio</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to={'/aprende'}> Aprende a programar</Link></li>
+              {/*  <li className="nav-item">  <Link className="nav-link" to={'/'}> Inicio</Link></li> */} 
+                    <li className="nav-item"><Link className="nav-link" to={'/aprende'}>Programación</Link></li>
                     <li className="nav-item"><Link className="nav-link" to={'/'}> Servicios</Link></li>
                     <li className="nav-item"><Link className="nav-link" to={'/'}> Productos</Link></li>
                     <li className="nav-item"><Link className="nav-link" to={'/software'}> software</Link></li>
+                {(auth.user?.username)? <li className="nav-item">  <Link className="nav-link" to={'/admin'}> Agrega Articulos</Link></li>:''}
                  {(auth.user?.username )? " ": <li className="nav-item"><Link className="nav-link" to={'/register'}>Sign Up</Link></li> } 
-                   
+                 {(auth.user?.username)? <li class="nav-item dropdown no-arrow"  onClick={menu}>
+                            <div class="nav-item dropdown no-arrow">
+                                <a class="dropdown-toggle nav-link show" aria-expanded="true" data-bs-toggle="dropdown" >
+                                    <span class="d-none d-lg-inline me-2 text-gray-600 small">{auth.user.username}</span>
+                                 <img onClick={menu}  class="border rounded-circle img-profile text-dark" src={profileImg}/></a>
+                                <div class={`dropdown-menu shadow dropdown-menu-end animated--grow-in ${showMenues} bg-light`}>
+                                    <a class="dropdown-item"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400 "></i>&nbsp;Profile</a>
+                                    <a class="dropdown-item" ><i class="fas fa-cogs fa-sm fa-fw me-2 "></i>&nbsp;Settings</a>
+                                    <a class="dropdown-item" ><i class="fas fa-list fa-sm fa-fw me-2 "></i>&nbsp;Activity log</a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item"  onClick={salir} ><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 "></i >&nbsp;Logout</a>
+                                </div>
+                            </div>
+                        </li>:<div className="div1-efecto"><Link  className="btn btn-primary shadow div2-efecto" role="button" to={'/login'}>Iniciar sesión</Link></div>}
                 </ul>
-                {(auth.user?.username)? <h6 className="nav-item nav-link">{auth.user.username} <h7 onClick={salir} className='pointer text-center pt-2 text-success' > Salir</h7></h6> : <div className="div1-efecto"><Link  className="btn btn-primary shadow div2-efecto" role="button" to={'/login'}>Iniciar sesión</Link></div>}
+
             </div>
         </div>
     </nav>

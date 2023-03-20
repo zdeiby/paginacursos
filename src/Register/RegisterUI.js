@@ -12,7 +12,7 @@ function RegisterUI(){
     const [noSame, setNoSame]=React.useState(false);
     const [pass, setPass]=React.useState(false);
 
-    let url='https://api.castelancarpinteyro.com/message'
+    let url='https://api.castelancarpinteyro.com/users'
     
     React.useEffect(()=> {
         async function leer() {

@@ -9,17 +9,18 @@ function AuthProvider({children}){
     const navigate=useNavigate();
     const [user, setUser]= React.useState(null)
 
-    async function login({username,password},l=0){ 
-     
-        console.log(username,password,l)
+    async function login({username,password,name},l=0){ 
+    
+    
         if(l===1){
             navigate('/')
-            localStorage.getItem("correo",username)
-            setUser({username});
+            localStorage.setItem("name",name)
+            setUser({username}); 
+            console.log(name)
         } 
         if(l===2){
             navigate('/')
-            localStorage.getItem("correo",username)
+            localStorage.setItem("name",name)
             setUser({username}); 
         }
        
