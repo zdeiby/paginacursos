@@ -68,7 +68,7 @@ console.log(data)
         <Container className="text-center pt-5 bg-dark"> 
            <h3 className="text-success">{blogpost.date}</h3>
            <h1> {blogpost.title}</h1> 
-           <h3 className="pb-5">{blogpost.author}s</h3> 
+           <h3 className="pb-5">{blogpost.author}</h3> 
         </Container>
         <Container className="pb-5 text-center">
         <h5 className="pt-5">
