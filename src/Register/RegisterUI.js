@@ -1,12 +1,12 @@
 import React from "react";
 import { Col  } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useAuth } from "../Login/peticion";
+import { useAuthr } from "../Login/peticion";
 import './Register.css'
 
 
 function RegisterUI(){
-    const auth= useAuth();
+    const auth= useAuthr();
     const [get, setGet]= React.useState("false");
     const [info, setInfo]= React.useState('');
     const [noSame, setNoSame]=React.useState(false);

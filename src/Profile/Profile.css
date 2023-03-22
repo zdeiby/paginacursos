@@ -1,0 +1,82 @@
+.contaner{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.portada{
+  /*  clip-path: circle(50% at center);*/
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  display: block;
+  float: left; 
+  z-index: -1;
+ 
+}
+.profile{
+    clip-path: circle(50% at center);
+    position: relative;
+    z-index: 1;
+    margin-top: -686px;
+    width: 19%;
+    border: 10px solid white;
+    border-radius: 50%;
+}
+
+
+header {
+    position: relative;
+  }
+  
+  .cover-photo {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .cover-photo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .profile-photo {
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  section {
+    padding: 20px;
+  }
+  .skills1{
+    border: 0.5px solid white;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: #3a3a3a;
+ 
+}  
+
+.skills2{
+    border: 0.5px solid white;
+    border-radius: 20px;
+    background: #2d2d2d;
+}  
+.skills{
+    border: 0.5px solid white;
+    border-radius: 20px;
+    background: #2d2d2d;
+}  
+.skills2:hover{
+    background:#3c3b3b;
+}
+.stars{
+    color:yellow
+  
+}

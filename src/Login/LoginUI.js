@@ -1,9 +1,9 @@
 import React from "react";
-import { useAuth } from "./peticion";
+import { useAuthr } from "./peticion";
 
 
 function LoginUI(){
-const auth= useAuth();
+const auth= useAuthr();
 
     const [info, setInfo]= React.useState({
         email:'',
@@ -34,8 +34,9 @@ const auth= useAuth();
       
         for(let i=0; i<get.body.length; i++){ 
             if(get.body[i].email === username && get.body[i].password === password){
-           let name=get.body[i].name
-            auth.login({username, password,name},2, ) 
+           let userAuto=get.body[i];
+                  console.log("autorizado papu", userAuto)
+             auth.login(userAuto,2) 
         }else{
             console.log("error")
             setNoSame(true)

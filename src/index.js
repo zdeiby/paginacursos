@@ -16,6 +16,8 @@ import { Footer } from './Componentes/Footer';
 import { AdminSend } from './Admin';
 import { DataProvider } from './Menu/BlogData';
 import { Cursos } from './Cursos/Cursos';
+import { Config } from './Config';
+import { Profile } from './Profile';
 
 
 
@@ -24,9 +26,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.Fragment>
     <Router>
-        <AuthProvider> <DataProvider>
-           
-            <Nav></Nav> 
+        <DataProvider>
+           <AuthProvider> 
+            <Nav></Nav>
             <Routes>
                 <Route path='/' element={<App/>} ></Route>
                 <Route path='/login' element={ <Login/>} ></Route>
@@ -34,15 +36,16 @@ root.render(
                 <Route path='/software' element={ <Software/>} ></Route>
                 <Route path='/admin' element={<AdminSend></AdminSend>} ></Route> 
                 <Route path='/aprende' element={ <Aprende/>} ></Route>
+                <Route path='/perfil' element={ <Profile/>} ></Route>
+                <Route path='/profile/:slug' element={ <Config/>} ></Route>
                 <Route path='/aprende/cursos' element={ <Cursos/>} ></Route>
-                
                 <Route path='/aprende/articulos' element={<BlogPage/>} ></Route>
                 <Route path='aprende/articulos/:id/:slug' element={<BlogPost/>} ></Route>
                  
                 <Route path='*' element={ <NotFound/>} ></Route>
-            </Routes>   </DataProvider>
+            </Routes>    </AuthProvider> </DataProvider>
             <Footer></Footer>
-        </AuthProvider>
+      
         </Router>
     </React.Fragment>
 );

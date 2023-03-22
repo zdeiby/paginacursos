@@ -7,21 +7,18 @@ const AuthContext=React.createContext();
 function AuthProvider({children}){
 
     const navigate=useNavigate();
-    const [user, setUser]= React.useState(null)
+    const [user, setUser]= React.useState("false")
 
-    async function login({username,password,name},l=0){ 
+    async function login(get,l=0){ 
     
-    
+        console.log("hola soy un get" ,get)
         if(l===1){
-            navigate('/')
-            localStorage.setItem("name",name)
-            setUser({username}); 
-            console.log(name)
+           setUser({get}); 
         } 
         if(l===2){
-            navigate('/')
-            localStorage.setItem("name",name)
-            setUser({username}); 
+           
+            setUser(get);
+             navigate('/profile/information') 
         }
        
     }
@@ -41,7 +38,7 @@ function AuthProvider({children}){
 
 
 
-function useAuth(){
+function useAuthr(){
    const auth =  React.useContext(AuthContext);
    return auth;
 }
@@ -49,7 +46,7 @@ function useAuth(){
 
 export {
     AuthProvider,
-    useAuth
+    useAuthr
 }
 
 
