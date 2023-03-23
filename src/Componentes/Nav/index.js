@@ -60,7 +60,7 @@ function Nav(){
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi bi-code-slash">
                         <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z">
                         </path>
-                    </svg></span><span>Pagina Cursos</span></Link>
+                    </svg></span><span>Castelán Carpinteyro</span></Link>
                     <button onClick={cerrarAbrir} data-bs-toggle="collapse" className="navbar-toggler" data-bs-target="#navcol-1"><span className="visually-hidden">Toggle
                     navigation</span><span className="navbar-toggler-icon"></span></button>
             <div className={`collapse navbar-collapse ${show}`} id="navcol-1">
