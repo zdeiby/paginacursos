@@ -18,7 +18,7 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.div{
+.divisor{
     display: block;
     border: 2px solid white;
     border-radius: 10px;

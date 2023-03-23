@@ -80,3 +80,7 @@ header {
     color:yellow
   
 }
+
+svg:hover{
+  background-color: rgb(41, 243, 142);
+}

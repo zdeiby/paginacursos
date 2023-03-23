@@ -97,7 +97,7 @@ function Config(){
                     </tr>
                 </thead>
                 <tbody >
-                   <tr ><th><div className='div '><p className='mt-4'>Escribe <span style={{color:'red'}}>eliminar</span> para borrar la cuenta</p>
+                   <tr ><th><div className='divisor '><p className='mt-4'>Escribe <span style={{color:'red'}}>eliminar</span> para borrar la cuenta</p>
                    <input className='eliminar mb-4 '></input><br/>
                    <button className='btn btn-danger'>Eliminar</button></div></th></tr>
                 </tbody>
