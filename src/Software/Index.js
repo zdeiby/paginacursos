@@ -14,7 +14,7 @@ function Software(){
         </Container>
        
        <Container className="pb-5">
-           ¿Qué tal? Soy Dante Castelán Carpinteyro; y en este sitio web podrás tener acceso gratuito a una amplia gama de programas y software tanto para ser más productivo en la computadora; como para comenzar en programación o divertirte jugando.<br/><br/>
+           En este sitio web podrás tener acceso gratuito a una amplia gama de programas y software tanto para ser más productivo en la computadora; como para comenzar en programación o divertirte jugando.<br/><br/>
 
             El software que aquí se encuentra está alojado en un servidor de OneDrive, por lo que es posible que el link caduque y no te permita acceder; en ese caso; contáctame por cualquiera de las vías disponibles en la parte inferior de esta página web para que lo genere nuevamente y funcione.<br/><br/>
 

@@ -14,6 +14,7 @@ function AuthProvider({children}){
         console.log("hola soy un get" ,get)
         if(l===1){
            setUser({get}); 
+           navigate('/') 
         } 
         if(l===2){
            

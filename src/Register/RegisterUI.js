@@ -45,6 +45,7 @@ function sendData(e){
            return
             } else{
                succes=true
+            
             }
            
     }
