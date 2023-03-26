@@ -66,12 +66,12 @@ function Nav(){
             <div className={`collapse navbar-collapse ${show}`} id="navcol-1">
                 <ul className="navbar-nav mx-auto">
               {/*  <li className="nav-item">  <Link className="nav-link" to={'/'}> Inicio</Link></li> */} 
-                    <li className="nav-item"><Link className="nav-link" to={'/aprende'}>Programación</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to={'/'}> Servicios</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to={'/'}> Productos</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to={'/software'}> software</Link></li>
-                {(auth.user?.name)? <li className="nav-item">  <Link className="nav-link" to={'/admin'}> Agrega Articulos</Link></li>:''}
-                 {(auth.user?.name )? " ": <li className="nav-item"><Link className="nav-link" to={'/register'}>Sign Up</Link></li> } 
+                    <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/aprende'}>Programación</Link></li>
+                    <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/'}> Servicios</Link></li>
+                    <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/'}> Productos</Link></li>
+                    <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/software'}> software</Link></li>
+                {(auth.user?.name)? <li className="nav-item" onClick={cerrarAbrir}>  <Link className="nav-link" to={'/admin'}> Agrega Articulos</Link></li>:''}
+                 {(auth.user?.name )? " ": <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/register'}>Sign Up</Link></li> } 
                  {(auth.user?.name)? <li class="nav-item dropdown no-arrow"  onClick={menu}>
                             <div class="nav-item dropdown no-arrow">
                                 <a class="dropdown-toggle nav-link show" aria-expanded="true" data-bs-toggle="dropdown" >

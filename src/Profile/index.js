@@ -18,7 +18,7 @@ function Profile(){
       </div>
     </header>
     <section>
-      <Container>
+      <Container className='pt-5'>
       <h1 className='text-center text-success' >{data.name+" "+ data.lastName}</h1>
       <p className='text-center'>{data.email}</p>
       </Container>

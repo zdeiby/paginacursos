@@ -9,15 +9,6 @@
   z-index: -1;
  
 }
-.profile{
-    clip-path: circle(50% at center);
-    position: relative;
-    z-index: 1;
-    margin-top: -686px;
-    width: 19%;
-    border: 10px solid white;
-    border-radius: 50%;
-}
 
 
 header {
@@ -25,7 +16,7 @@ header {
   }
   
   .cover-photo {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
   }
   
@@ -43,15 +34,19 @@ header {
     overflow: hidden;
     width: 150px;
     height: 150px;
+    margin-left: 70px;
+       
   }
   
   .profile-photo img {
     width: 100%;
     height: auto;
+   
   }
   
   section {
     padding: 20px;
+
   }
   .skills1{
     border: 0.5px solid white;

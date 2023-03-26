@@ -11,17 +11,20 @@ import { Subscribe } from '../Componentes/Subscribe/index.js';
 import { Footer } from '../Componentes/Footer/index.js';
 
 
+
 function AppUI(){
-    return(
-        <React.Fragment>
+    return(     <React.Fragment> 
+        
+     
         <Header></Header>
         <div className='div'></div>
         <Carrousel></Carrousel>
         <UsedBy></UsedBy>
         <AprendeContainer></AprendeContainer>
-     
+    
+
         <section>
-            <div className="container py-5">
+            <div className="container py-5 ">
                 <div className="mx-auto estilo">
                     <div className="row row-cols-1 row-cols-md-2 d-flex justify-content-center">   
                     <ColorCard color='primary' name='JavaScript' text='Prepárate para hacer de tu web un sitio dinámico y con funcionalidades del lado del cliente'></ColorCard>
