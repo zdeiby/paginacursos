@@ -18,6 +18,39 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.boton2{
+    display: block;
+     width: 100%;
+     padding: 0.4rem 1.0rem;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.6;
+     color: #2d2c38;
+     background-color: #fff;
+     background-clip: padding-box;
+     border: 2px solid #48ff00;
+     appearance: none;
+     border-radius: 1rem;
+     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+ }
+
+
+ .err{
+    display: block;
+     width: 100%;
+     padding: 0.4rem 1.0rem;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.6;
+     color: #2d2c38;
+     background-color: #fff;
+     background-clip: padding-box;
+     border: 2px solid red;
+     appearance: none;
+     border-radius: 1rem;
+     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+ }
+
 .divisor{
     display: block;
     border: 2px solid white;
@@ -31,4 +64,11 @@
 }
 .color{
     color:#6363fc
+}
+
+.texto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
 }

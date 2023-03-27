@@ -14,21 +14,58 @@ function Nav(){
     const [showMenues,setShowMenu] = React.useState('');
     const [state, setState]= React.useState(true);
     const [show, setShow]= React.useState(true);
+    const [getCourses, setGetCourses]= React.useState("false");
+    const [out, setOut]= React.useState('');
     const auth=useAuthr();
-    if(auth.user?.name){
-        let stringy = JSON.stringify({name:auth.user.name,
-            lastName:auth.user.lastName,
-            email:auth.user.email }) 
-            localStorage.setItem("date",stringy) 
+    
+React.useEffect(()=>{
+     async function leerCourses() {
+                const response = await fetch('http://localhost:8000/cursos', {
+                  method: 'GET',
+                });
+                const data =  await response.json();
+                try{
+                    let a=data.body
+                    setGetCourses(await data); 
+                   
+                  //  console.log(data)   
+                }catch{
+                    console.log('error')
+                }
+            
+              
+              }
+
+              leerCourses()
+},[out])
        
+    if(auth.user?.name){
+        let stringy = JSON.stringify({
+            _id:auth.user._id,
+            name:auth.user.name,
+            lastName:auth.user.lastName,
+            email:auth.user.email,
+             }) 
+            localStorage.setItem("date",stringy)
+         if(getCourses !=='false'){
+        let pushCO=getCourses.body.filter(index=> index._id==JSON.parse(localStorage.getItem("date"))._id)
+            localStorage.setItem("cursos", JSON.stringify(pushCO))
+          
     }
+    }
+
+    
     try{
       auth.user=JSON.parse(localStorage.getItem("date"))
     }catch{
 
     }
    
-    const salir=() => auth.logout()
+    const salir=() => {
+      
+        auth.logout()  
+        setOut(new Date())
+    }
 
     function cerrarAbrir(){
         setState(!state)

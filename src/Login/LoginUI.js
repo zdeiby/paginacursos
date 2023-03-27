@@ -12,6 +12,7 @@ const auth= useAuthr();
     });
     const [get, setGet]= React.useState("false");
     const [noSame, setNoSame]=React.useState(false);
+ 
     let url='https://api.castelancarpinteyro.com/users'
     
         async function leer() {
@@ -22,7 +23,11 @@ const auth= useAuthr();
       
         return setGet(await data)
       }
+      
      
+   
+    
+
     function sendData(e){
         e.preventDefault();
         let username=info.email;
@@ -36,6 +41,7 @@ const auth= useAuthr();
             if(get.body[i].email === username && get.body[i].password === password){
            let userAuto=get.body[i];
                   console.log("autorizado papu", userAuto)
+               
              auth.login(userAuto,2) 
         }else{
             console.log("error")

@@ -5,28 +5,113 @@ import './ColorCard.css'
 function ColorCard(props){
     const [mostrar, setMostrar]=React.useState(false)
     const navigate= useNavigate()
+    let url='http://localhost:8000/cursos'
+
+    async function postear(info) {
+        /*  const response = */ await fetch(url, {
+              method: 'POST', // or 'PUT'
+              body: JSON.stringify(info), // data can be `string` or {object}!
+              headers: {
+              'Content-Type': 'application/json'
+              }
+  })
+}
+let datos;
+
+try{
+  datos=  localStorage.getItem("cursos").includes('JavaScript')
+}catch{
+
+}
     function inscribirse(e){
         console.log(e)
         if(e==='JavaScript'){
             console.log("inscripto correctamente")
-            setMostrar(true)
+            if(datos){
+                setMostrar(false)
+                navigate('../aprende/cursos/javascript')
+            }else{
+                 setMostrar(true)
+                 postear({
+                    name:props.name,
+                    brand:'Js',
+                    created_by:JSON.parse(localStorage.getItem('date'))._id  }
+                    ) 
+                    const cursos=JSON.parse(localStorage.getItem("cursos"))
+                    cursos.push({
+                        name:props.name,
+                        brand:'js',
+                        _id:JSON.parse(localStorage.getItem('date'))._id
+                     }) 
+
+                        localStorage.setItem("cursos2",JSON.stringify(cursos)) 
+                       
+                      
+              
+            }
+       
+           
          //   alert("inscrito correctamente")
-          //  navigate('../aprende/cursos/javascript')
+          //  
         }
         if(e==='HTML'){
-            console.log("inscripto correctamente")
-            setMostrar(true)
+            if(localStorage.getItem("cursos").includes('html')){
+                setMostrar(false)
+                navigate('../aprende/cursos/html')
+            }else{
+                 setMostrar(true)
+                 postear({
+                    name:props.name,
+                    brand:'html',
+                    created_by:JSON.parse(localStorage.getItem('date'))._id  }
+                    ) 
+                    const cursos=JSON.parse(localStorage.getItem("cursos"))
+                    cursos.push({
+                        name:props.name,
+                        brand:'html',
+                        _id:JSON.parse(localStorage.getItem('date'))._id  }) 
+                        localStorage.setItem("cursos",JSON.stringify(cursos)) 
+            }
           //  navigate('../aprende/cursos/html')
         }
         if(e==='CSS'){
             console.log("inscripto correctamente")
-            setMostrar(true)
-        //    navigate('../aprende/cursos/css')
+            if(localStorage.getItem("cursos").includes('css')){
+                setMostrar(false)
+                navigate('../aprende/cursos/css')
+            }else{
+                 setMostrar(true)
+                 postear({
+                    name:props.name,
+                    brand:'css',
+                    created_by:JSON.parse(localStorage.getItem('date'))._id  }
+                    )  
+                    const cursos=JSON.parse(localStorage.getItem("cursos"))
+                    cursos.push({
+                        name:props.name,
+                        brand:'css',
+                        _id:JSON.parse(localStorage.getItem('date'))._id }) 
+                        localStorage.setItem("cursos",JSON.stringify(cursos))
+            }
         }
         if(e==='Bootstrap'){
-            console.log("inscripto correctamente")
-            setMostrar(true)
-         //   navigate('../aprende/cursos/bootstrap')
+            if(localStorage.getItem("cursos").includes('Bootstrap')){
+                setMostrar(false)
+                navigate('../aprende/cursos/css')
+            }else{
+                 setMostrar(true)
+                 postear({
+                    name:props.name,
+                    brand:'Bootstrap',
+                    created_by:JSON.parse(localStorage.getItem('date'))._id  }
+                    )  
+                    const cursos=JSON.parse(localStorage.getItem("cursos"))
+                    cursos.push({
+                        name:props.name,
+                        brand:'Bootstrap',
+                        _id:JSON.parse(localStorage.getItem('date'))._id }) 
+                        localStorage.setItem("cursos",JSON.stringify(cursos))
+            }
         }
     }
 
@@ -35,7 +120,7 @@ function ColorCard(props){
     return(
         <React.Fragment>
             {mostrar?<>
-                        <button onClick={()=>navigate(`../aprende/cursos/${props.name}`)} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <button onClick={()=>{navigate(`../aprende/cursos/${props.name}`);window.location.reload()}} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Inscripto correctamente Click aqui para continuar
                         </button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
