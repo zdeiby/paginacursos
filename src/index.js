@@ -37,6 +37,7 @@ root.render(
                 <Route path='/software' element={ <Software/>} ></Route>
                 <Route path='/admin' element={<AdminSend></AdminSend>} ></Route> 
                 <Route path='/aprende' element={ <Aprende/>} ></Route>
+                <Route path='/aprende/cursos/sql' element={ <AprendeJavascript url='DFg1V-rO6Pg' title='Curso de SQL completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
                 <Route path='/aprende/cursos/javascript' element={ <AprendeJavascript  url='z95mZVUcJ-E' title='Curso de Javascript JUNIOR' title1='Parte 1'  title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
                 <Route path='/aprende/cursos/css' element={ <AprendeJavascript url='OWKXEJN67FE' title='Curso de CSS completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
                 <Route path='/aprende/cursos/html' element={ <AprendeJavascript url='kN1XP-Bef7w' title='Curso de HTML completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>

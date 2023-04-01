@@ -25,6 +25,31 @@ try{
 }
     function inscribirse(e){
         console.log(e)
+        if(e==='Bases de datos SQL (NUEVO)'){
+            console.log("inscripto correctamente")
+            if(datos){
+                setMostrar(false)
+                navigate('../aprende/cursos/sql')
+            }else{
+                 setMostrar(true)
+                 postear({
+                    name:props.name,
+                    brand:'sql',
+                    created_by:JSON.parse(localStorage.getItem('date'))._id  }
+                    ) 
+                    const cursos=JSON.parse(localStorage.getItem("cursos"))
+                    cursos.push({
+                        name:props.name,
+                        brand:'sql',
+                        _id:JSON.parse(localStorage.getItem('date'))._id
+                     }) 
+
+                        localStorage.setItem("cursos2",JSON.stringify(cursos)) 
+                       
+                      
+              
+            }
+        }
         if(e==='JavaScript'){
             console.log("inscripto correctamente")
             if(datos){
@@ -49,10 +74,6 @@ try{
                       
               
             }
-       
-           
-         //   alert("inscrito correctamente")
-          //  
         }
         if(e==='HTML'){
             if(localStorage.getItem("cursos").includes('html')){
