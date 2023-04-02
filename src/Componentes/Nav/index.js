@@ -20,7 +20,7 @@ function Nav(){
     
 React.useEffect(()=>{
      async function leerCourses() {
-                const response = await fetch('http://localhost:8000/cursos', {
+                const response = await fetch('https://api.castelancarpinteyro.com/cursos', {
                   method: 'GET',
                 });
                 const data =  await response.json();

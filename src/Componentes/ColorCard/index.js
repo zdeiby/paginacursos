@@ -5,7 +5,7 @@ import './ColorCard.css'
 function ColorCard(props){
     const [mostrar, setMostrar]=React.useState(false)
     const navigate= useNavigate()
-    let url='http://localhost:8000/cursos'
+    let url='https://api.castelancarpinteyro.com/cursos'
 
     async function postear(info) {
         /*  const response = */ await fetch(url, {
