@@ -50,7 +50,7 @@ function Config(){
 
     React.useEffect(()=>{
         async function leerCourses() {
-                   const response = await fetch('http://localhost:8000/cursos', {
+                   const response = await fetch('https://api.castelancarpinteyro.com/cursos', {
                      method: 'GET',
                    });
                    const data =  await response.json();
@@ -78,7 +78,7 @@ try{
   
 
     function eliminarCursos(id){
-        fetch(`http://localhost:8000/cursos/${id}`, {
+        fetch(`https://api.castelancarpinteyro.com/cursos/${id}`, {
   method: 'DELETE'
 })
   .then(response => console.log('Data deleted'))
@@ -86,7 +86,7 @@ try{
   setOn(new Date())
     }
     async function modificar(info, id) {
-        /*  const response = */ await fetch(`http://localhost:8000/users/${id}`, {
+        /*  const response = */ await fetch(`https://api.castelancarpinteyro.com/users/${id}`, {
               method: 'PATCH', // or 'PUT'
               body: JSON.stringify(info), // data can be `string` or {object}!
               headers: {
@@ -124,7 +124,7 @@ function enviar(e){
   
 }
 function eliminarUser(id){
-    fetch(`http://localhost:8000/users/${id}`, {
+    fetch(`https://api.castelancarpinteyro.com/users/${id}`, {
 method: 'DELETE'
 })
 }
