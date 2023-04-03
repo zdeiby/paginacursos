@@ -19,7 +19,8 @@ function Nav(){
     const auth=useAuthr();
     
 React.useEffect(()=>{
-     async function leerCourses() {
+  
+        async function leerCourses() {
                 const response = await fetch('https://api.castelancarpinteyro.com/cursos', {
                   method: 'GET',
                 });
@@ -34,9 +35,11 @@ React.useEffect(()=>{
                 }
             
               
-              }
+              }  leerCourses()
+   
+     
 
-              leerCourses()
+            
 },[out])
        
     if(auth.user?.name){
@@ -48,17 +51,17 @@ React.useEffect(()=>{
              }) 
             localStorage.setItem("date",stringy)
          if(getCourses !=='false'){
-        let pushCO=getCourses.body.filter(index=> index._id==JSON.parse(localStorage.getItem("date"))._id)
-            localStorage.setItem("cursos", JSON.stringify(pushCO))
+      try{ let pushCO=getCourses.body.filter(index=> index._id==JSON.parse(localStorage.getItem("date"))._id)
+            localStorage.setItem("cursos", JSON.stringify(pushCO))} catch{ }
           
     }
     }
+ 
 
-    
     try{
       auth.user=JSON.parse(localStorage.getItem("date"))
     }catch{
-
+       
     }
    
     const salir=() => {
