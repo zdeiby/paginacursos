@@ -28,7 +28,7 @@ function RegisterUI(){
       leer()
     },[])
 
-console.log(get)
+console.log(get);
    
 function sendData(e){
     let succes;
