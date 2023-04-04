@@ -25,7 +25,7 @@ try{
 }
     function inscribirse(e){
         console.log(e)
-        if(e==='Bases de datos SQL (NUEVO)'){
+        if(e==='sql'){
             console.log("inscripto correctamente")
             if(datos){
                 setMostrar(false)
