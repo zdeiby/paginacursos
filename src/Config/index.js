@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { LoginUI } from '../Login/LoginUI';
 import { useAuthr } from '../Login/peticion';
 import './Config.css'
+import { borrar, leer, modificar } from '../dataBases/db';
 
 
 
@@ -25,15 +26,10 @@ function Config(){
              setUrl(e.target.outerText);
              
     }
-
-    let url2='https://api.castelancarpinteyro.com/users'
-
     React.useEffect(()=>{
-    async function leer() {
-    const response = await fetch(url2, {
-      method: 'GET',
-    });
-    const data = await response.json();
+    async function leerU() {
+   
+    const data = await leer('users');
    const id=JSON.parse(localStorage.getItem("date"))._id;
    for(let i=0; i<data.body.length;i++){ 
     if(data.body[i]._id == id){
@@ -43,17 +39,14 @@ function Config(){
 }
 
   }
-  leer()
+  leerU()
 },[])
 
 
 
     React.useEffect(()=>{
         async function leerCourses() {
-                   const response = await fetch('https://api.castelancarpinteyro.com/cursos', {
-                     method: 'GET',
-                   });
-                   const data =  await response.json();
+                   const data =  await leer('cursos');
                    try{
                        let a=data.body
                        setGet(await data); 
@@ -78,33 +71,24 @@ try{
   
 
     function eliminarCursos(id){
-        fetch(`https://api.castelancarpinteyro.com/cursos/${id}`, {
-  method: 'DELETE'
-})
-  .then(response => console.log('Data deleted'))
-  .catch(error => console.error(error));
+        borrar(id,'cursos')
   setOn(new Date())
     }
-    async function modificar(info, id) {
-        /*  const response = */ await fetch(`https://api.castelancarpinteyro.com/users/${id}`, {
-              method: 'PATCH', // or 'PUT'
-              body: JSON.stringify(info), // data can be `string` or {object}!
-              headers: {
-              'Content-Type': 'application/json'
-              }
-  })}
+    async function modificarU(info, id) {
+        modificar(info,id,'users')
+        }
 
 function enviar(e){
     e.preventDefault()
-    console.log(getUsers)
+   
     if(getUsers){
-        console.log(getUsers)
+       
         if(pass.actual ===getUsers.password) {
             setVal1(true)
            if(pass.nueva1 ===pass.nueva2 && pass.nueva1.length >= 8) {
             setVal2(true)
             console.log(pass)
-            modificar({password:pass.nueva1},getUsers._id)
+            modificarU({password:pass.nueva1},getUsers._id)
             navigate('../profile/information')
             return
         }else{
@@ -124,9 +108,7 @@ function enviar(e){
   
 }
 function eliminarUser(id){
-    fetch(`https://api.castelancarpinteyro.com/users/${id}`, {
-method: 'DELETE'
-})
+    borrar(id,'users')
 }
 const [delet, setDelete]=React.useState('')
 function deleteUser(){
@@ -141,7 +123,7 @@ let login = false;
        login= localStorage.getItem("date");
        
     }catch{
-            console.log("login")
+         
     }
 
     return(

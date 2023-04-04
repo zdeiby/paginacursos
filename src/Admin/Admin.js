@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import React from 'react'
 import { useAuth } from "../Menu/BlogData"
 import { Link, useNavigate } from "react-router-dom";
+import { leer, modificar, postear } from "../dataBases/db";
 
 
 function Enviar(){
@@ -14,20 +15,12 @@ function Enviar(){
   const [states, setState]=React.useState(false);
   const [edit, setEdit]=React.useState(false);
 
-  let url ='https://api.castelancarpinteyro.com/articles';
-  async function leer(info) {
-    /*  const response = */ await fetch(url, {
-          method: 'POST', // or 'PUT'
-          body: JSON.stringify(info), // data can be `string` or {object}!
-          headers: {
-          'Content-Type': 'application/json'
-          }
-})
+  async function enviarA(info) {
+    postear(info,'articles')
   }
 
   React.useEffect( ()=>{
-      fetch('https://api.castelancarpinteyro.com/articles')
-          .then(response =>  response.json())
+      leer('articles')
           .then(data =>{ 
               try{
                   let a=data.body[0].author
@@ -36,8 +29,6 @@ function Enviar(){
 
               }})
   },[])
-
-console.log(datos)
   
     let ref= React.useRef();
     let arr=[];
@@ -53,7 +44,6 @@ console.log(data)
     React.useEffect(() => {
         // 👇️ use a ref (best)
         const element2 = ref.current;
-        console.log(element2)
         setData({...data,date:element2.value});
       }, []);
   function almacen(e){
@@ -64,13 +54,13 @@ console.log(data)
     })
 
    }
-  console.log(auth.blogdata.length-1)
+
   function enviar(e){
     e.preventDefault()
     data.slug=data.title.split(" ").join("-") 
-    leer(data)
+    enviarA(data)
     data.id=(auth.blogdata.length)
-    console.log(data)
+ 
     auth.blogdata.push(data)
     navigate('../aprende/articulos')
     }
@@ -80,7 +70,7 @@ console.log(data)
       if(datos[i].title == e.target.value){
         setEdit(datos[i]);
       }
-      console.log("edit.." ,edit)
+    
     }
       function almacen2(e){
         setEdit({
@@ -88,25 +78,14 @@ console.log(data)
             ...edit,
             [e.target.name]:e.target.value,
         })
-    console.log(edit)
+
        }
       
     function editar(id){
      
      setData2(true)
       async function actualizar(id, info) {
-       const url = `https://api.castelancarpinteyro.com/articles/${id}`;
-     
-       const response = await fetch(url, {
-         method: 'PATCH',
-         body: JSON.stringify(info),
-         headers: {
-           'Content-Type': 'application/json'
-         }
-       });
-     
-       const data = await response.json();
-     
+       const data = await modificar(info,id,'articles')
        return data;
      }
      actualizar(id, edit)

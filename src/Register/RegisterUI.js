@@ -3,6 +3,7 @@ import { Col  } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAuthr } from "../Login/peticion";
 import './Register.css'
+import {leer, postear} from '../dataBases/db'
 
 
 function RegisterUI(){
@@ -11,24 +12,14 @@ function RegisterUI(){
     const [info, setInfo]= React.useState('');
     const [noSame, setNoSame]=React.useState(false);
     const [pass, setPass]=React.useState(false);
-
-    let url='https://api.castelancarpinteyro.com/users'
     
     React.useEffect(()=> {
-        async function leer() {
-        const response = await fetch(url, {
-          method: 'GET',
-        });
-        const data =  await response.json();
-
-        return setGet(await data);
-       
-      
+        async function leerUsers() {
+            setGet(await leer("users"));
       }
-      leer()
+      leerUsers()
     },[])
 
-console.log(get);
    
 function sendData(e){
     let succes;
@@ -39,7 +30,6 @@ function sendData(e){
     if(get !=="false"){
         for(let i=0; i<get.body.length; i++){ 
         if(get?.body[i].email === info.email || (!info.lastName || !info.email || !info.password) ){
-            console.log("no puedes registrarte ya existe el correo")
             succes=false;
             setNoSame(true)
            return
@@ -51,24 +41,10 @@ function sendData(e){
     }
 
  if(succes ===true){
-    async function leer(info) {
-      /*  const response = */ await fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(info), // data can be `string` or {object}!
-            headers: {
-            'Content-Type': 'application/json'
-            }
-})
-//const data = await response.json();
-
-return 
-}
-leer(info);
+postear(info, 'users');
 let username=info.name;
 let password=info.password;
 auth.login({username, password},1) 
-console.log("success")
-
  }
     }
    }

@@ -17,10 +17,10 @@ function Cursos(){
         nameCourses=cursos.map(index => index.name)
         cursos2=JSON.parse(localStorage.getItem("cursos2"))
         nameCourses2=cursos.map(index => index.name)
-        console.log(nameCourses2)
+      
    
     }catch{
-        console.log("hola")
+       
     }
    let datos=false
    try{

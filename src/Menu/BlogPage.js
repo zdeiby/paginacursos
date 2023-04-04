@@ -10,7 +10,7 @@ function BlogPage(){
     return(
         <>
            {auth.blogdata.map(post => (
-                <BlogLink post={post}/>
+                <BlogLink key={post._id} post={post}/>
             ))}
           
         </>
@@ -23,8 +23,8 @@ function BlogLink({post}){
        <Container className='text-center  pt-4 pb-2'>
           <Link className='text-success ' to={`/aprende/articulos/${post._id}/${post.slug}`}>
 
-<table class="table">
-  <thead class="thead-light">
+<table className="table">
+  <thead className="thead-light">
   
   </thead>
   <tbody>

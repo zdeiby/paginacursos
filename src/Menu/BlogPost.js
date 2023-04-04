@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import './BlogPost.css'
 //import { blogdata } from './BlogData';
 import { useAuth } from './BlogData';
+import { leer } from '../dataBases/db';
 
 function BlogPost(){
     const auth= useAuth()
@@ -12,8 +13,7 @@ function BlogPost(){
     const [data, setData]=React.useState(false);
 console.log(data)
     React.useEffect( ()=>{
-        fetch('https://api.castelancarpinteyro.com/articles')
-            .then(response =>  response.json())
+        leer('articles')
             .then(data =>{ 
                 try{
                    let a=data.body[0].author
@@ -56,7 +56,7 @@ console.log(data)
         image5= blogpost.image5;
 
     }catch{
-        console.log("error")
+       
     }
 
     return(

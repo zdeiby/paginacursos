@@ -7,7 +7,7 @@ import '../../assets/css/uiverse.css'
 import { useAuthr } from "../../Login/peticion";
 import './Nav.css'
 import profileImg from '../../assets/img/profileImages/308005691_464884012340731_7728597009113021700_n.jpg'
-
+import {leer} from '../../dataBases/db'
 
 function Nav(){
     const [searchMenu, setSearchMenu] = React.useState(true);
@@ -18,29 +18,16 @@ function Nav(){
     const [out, setOut]= React.useState('');
     const auth=useAuthr();
     
-React.useEffect(()=>{
-  
-        async function leerCourses() {
-                const response = await fetch('https://api.castelancarpinteyro.com/cursos', {
-                  method: 'GET',
-                });
-                const data =  await response.json();
-                try{
-                    let a=data.body
-                    setGetCourses(await data); 
-                   
-                  //  console.log(data)   
-                }catch{
-                    console.log('error')
-                }
-            
-              
-              }  leerCourses()
-   
-     
-
-            
+React.useEffect( ()=>{
+    async function leerNav(){
+        let datos = await leer('cursos')
+        setGetCourses(datos) 
+    }
+    leerNav()
+      
 },[out])
+console.log(getCourses)
+
        
     if(auth.user?.name){
         let stringy = JSON.stringify({

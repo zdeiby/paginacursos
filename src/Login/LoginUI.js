@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthr } from "./peticion";
+import {leer} from '../dataBases/db'
 
 
 function LoginUI(){
@@ -12,39 +13,24 @@ const auth= useAuthr();
     });
     const [get, setGet]= React.useState("false");
     const [noSame, setNoSame]=React.useState(false);
- 
-    let url='https://api.castelancarpinteyro.com/users'
     
-        async function leer() {
-        const response = await fetch(url, {
-          method: 'GET',
-        });
-        const data = await response.json();
-      
-        return setGet(await data)
-      }
-      
-     
-   
-    
-
+    async function leerUser(){
+        let dato=await leer('users');
+        setGet(dato)
+    }
     function sendData(e){
         e.preventDefault();
         let username=info.email;
         let password=info.password;
      
-       
-    
        if(get !== 'false' ){
       
         for(let i=0; i<get.body.length; i++){ 
             if(get.body[i].email === username && get.body[i].password === password){
            let userAuto=get.body[i];
-                  console.log("autorizado papu", userAuto)
                
              auth.login(userAuto,2) 
         }else{
-            console.log("error")
             setNoSame(true)
         }
     
@@ -60,10 +46,11 @@ const auth= useAuthr();
             ...info,
             [e.target.name]:e.target.value,
             })
-       await leer()
+
+       await  leerUser()
     }
 
-  //  console.log(info)
+ 
   
     return(
         <section className="py-5">
