@@ -141,7 +141,7 @@ try{
     return(
         <React.Fragment>
             {mostrar?<>
-                        <button onClick={()=>{navigate(`../aprende/cursos/${props.name}`);window.location.reload()}} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <button onClick={()=>{navigate(`../aprende/cursos/${props.brand}`);window.location.reload()}} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Inscripto correctamente Click aqui para continuar
                         </button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
