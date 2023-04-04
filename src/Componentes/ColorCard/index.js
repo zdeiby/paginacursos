@@ -33,13 +33,13 @@ try{
             }else{
                  setMostrar(true)
                  postear({
-                    name:props.name,
+                    name:props.brand,
                     brand:'sql',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
                     ) 
                     const cursos=JSON.parse(localStorage.getItem("cursos"))
                     cursos.push({
-                        name:props.name,
+                        name:props.brand,
                         brand:'sql',
                         _id:JSON.parse(localStorage.getItem('date'))._id
                      }) 
