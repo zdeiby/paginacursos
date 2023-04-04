@@ -167,9 +167,9 @@ try{
             : <div className="col mb-4">
                 <div className={`card bg-${props.color}-light`}>
                     <div className="card-body text-center px-4 py-5 px-md-5">
-                        <p className="fw-bold text-info card-text mb-2">{props.name}</p>
+                        <p className="fw-bold text-info card-text mb-2">{props.brand}</p>
                         <h5 className="fw-bold card-title mb-3">{props.text}</h5>
-                        <button onClick={()=>inscribirse(props.name)}className="btn btn-info btn-sm" type="button">{props.nombre?props.nombre:'leer mas'}</button>
+                        <button onClick={()=>inscribirse(props.brand)}className="btn btn-info btn-sm" type="button">{props.nombre?props.nombre:'leer mas'}</button>
                     </div>
                 </div>
             </div>}
