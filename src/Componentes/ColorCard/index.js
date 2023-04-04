@@ -34,13 +34,13 @@ try{
                  setMostrar(true)
                  postear({
                     name:props.name,
-                    brand:'sql',
+                    brand:'Bases de datos SQL (NUEVO)',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
                     ) 
                     const cursos=JSON.parse(localStorage.getItem("cursos"))
                     cursos.push({
                         name:props.name,
-                        brand:'sql',
+                        brand:'Bases de datos SQL (NUEVO)',
                         _id:JSON.parse(localStorage.getItem('date'))._id
                      }) 
 
