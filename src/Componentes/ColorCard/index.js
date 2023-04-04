@@ -33,13 +33,13 @@ try{
             }else{
                  setMostrar(true)
                  postear({
-                    name:props.brand,
+                    name:props.name,
                     brand:'sql',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
                     ) 
                     const cursos=JSON.parse(localStorage.getItem("cursos"))
                     cursos.push({
-                        name:props.brand,
+                        name:props.name,
                         brand:'sql',
                         _id:JSON.parse(localStorage.getItem('date'))._id
                      }) 
@@ -141,7 +141,7 @@ try{
     return(
         <React.Fragment>
             {mostrar?<>
-                        <button onClick={()=>{navigate(`../aprende/cursos/${props.brand}`);window.location.reload()}} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <button onClick={()=>{navigate(`../aprende/cursos/${props.name}`);window.location.reload()}} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Inscripto correctamente Click aqui para continuar
                         </button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -167,9 +167,9 @@ try{
             : <div className="col mb-4">
                 <div className={`card bg-${props.color}-light`}>
                     <div className="card-body text-center px-4 py-5 px-md-5">
-                        <p className="fw-bold text-info card-text mb-2">{props.brand}</p>
+                        <p className="fw-bold text-info card-text mb-2">{props.name}</p>
                         <h5 className="fw-bold card-title mb-3">{props.text}</h5>
-                        <button onClick={()=>inscribirse(props.brand)}className="btn btn-info btn-sm" type="button">{props.nombre?props.nombre:'leer mas'}</button>
+                        <button onClick={()=>inscribirse(props.name)}className="btn btn-info btn-sm" type="button">{props.nombre?props.nombre:'leer mas'}</button>
                     </div>
                 </div>
             </div>}
