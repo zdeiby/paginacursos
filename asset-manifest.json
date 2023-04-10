@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/paginacursos/static/css/main.a3b0a036.css",
-    "main.js": "/paginacursos/static/js/main.a2ecc699.js",
+    "main.js": "/paginacursos/static/js/main.249e69d8.js",
     "static/media/maquetadoHTML-banner.png": "/paginacursos/static/media/maquetadoHTML-banner.c5387949d0394dd9113b.png",
     "static/media/hero-background-technology.jpg": "/paginacursos/static/media/hero-background-technology.5691be3df1a3b7f0554e.jpg",
     "static/media/hero-background-photography.jpg": "/paginacursos/static/media/hero-background-photography.a2257aec08646991607d.jpg",
@@ -11,10 +11,10 @@
     "static/media/NotFound.jpg": "/paginacursos/static/media/NotFound.5385389d563708f1add6.jpg",
     "index.html": "/paginacursos/index.html",
     "main.a3b0a036.css.map": "/paginacursos/static/css/main.a3b0a036.css.map",
-    "main.a2ecc699.js.map": "/paginacursos/static/js/main.a2ecc699.js.map"
+    "main.249e69d8.js.map": "/paginacursos/static/js/main.249e69d8.js.map"
   },
   "entrypoints": [
     "static/css/main.a3b0a036.css",
-    "static/js/main.a2ecc699.js"
+    "static/js/main.249e69d8.js"
   ]
 }
