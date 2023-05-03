@@ -1,21 +1,24 @@
 import React from "react";
 import { Link , useNavigate} from "react-router-dom";
 import './ColorCard.css'
+import { leer, postear } from "../../dataBases/db";
 
 function ColorCard(props){
     const [mostrar, setMostrar]=React.useState(false)
     const navigate= useNavigate()
-    let url='https://api.castelancarpinteyro.com/cursos'
 
-    async function postear(info) {
-        /*  const response = */ await fetch(url, {
-              method: 'POST', // or 'PUT'
-              body: JSON.stringify(info), // data can be `string` or {object}!
-              headers: {
-              'Content-Type': 'application/json'
-              }
-  })
+    async function postearC(info) {
+      postear(info,'cursos')
 }
+async function leerC() {
+   
+    return await leer('cursos')
+}
+
+async function postearA(info) {
+    postear(info,'cursosadvanced')
+}
+
 let datos;
 
 try{
@@ -23,16 +26,16 @@ try{
 }catch{
 
 }
-    function inscribirse(e){
+ async   function inscribirse(e){
         console.log(e)
         if(e==='sql'){
-            console.log("inscripto correctamente")
-            if(datos){
+            if(localStorage.getItem("cursos").includes('sql')){
                 setMostrar(false)
-                navigate('../aprende/cursos/sql')
+                navigate('../aprende/cursos/sql') 
+               
             }else{
                  setMostrar(true)
-                 postear({
+                 postearC({
                     name:props.name,
                     brand:'sql',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
@@ -41,15 +44,18 @@ try{
                     cursos.push({
                         name:props.name,
                         brand:'sql',
-                        _id:JSON.parse(localStorage.getItem('date'))._id
-                     }) 
-
-                        localStorage.setItem("cursos2",JSON.stringify(cursos)) 
+                        _id:JSON.parse(localStorage.getItem('date'))._id  }) 
+                        localStorage.setItem("cursos",JSON.stringify(cursos)) 
                        
-                      
-              
             }
+          
+                 
+          //  navigate('../aprende/cursos/html')
+     
+             
+
         }
+       
         if(e==='JavaScript'){
             console.log("inscripto correctamente")
             if(datos){
@@ -57,7 +63,7 @@ try{
                 navigate('../aprende/cursos/javascript')
             }else{
                  setMostrar(true)
-                 postear({
+                 postearC({
                     name:props.name,
                     brand:'Js',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
@@ -68,11 +74,7 @@ try{
                         brand:'js',
                         _id:JSON.parse(localStorage.getItem('date'))._id
                      }) 
-
                         localStorage.setItem("cursos2",JSON.stringify(cursos)) 
-                       
-                      
-              
             }
         }
         if(e==='HTML'){
@@ -81,7 +83,7 @@ try{
                 navigate('../aprende/cursos/html')
             }else{
                  setMostrar(true)
-                 postear({
+                 postearC({
                     name:props.name,
                     brand:'html',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
@@ -102,7 +104,7 @@ try{
                 navigate('../aprende/cursos/css')
             }else{
                  setMostrar(true)
-                 postear({
+                 postearC({
                     name:props.name,
                     brand:'css',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
@@ -121,7 +123,7 @@ try{
                 navigate('../aprende/cursos/css')
             }else{
                  setMostrar(true)
-                 postear({
+                 postearC({
                     name:props.name,
                     brand:'Bootstrap',
                     created_by:JSON.parse(localStorage.getItem('date'))._id  }
@@ -141,8 +143,9 @@ try{
     return(
         <React.Fragment>
             {mostrar?<>
-                        <button onClick={()=>{navigate(`../aprende/cursos/${props.name}`);window.location.reload()}} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <button onClick={()=>{navigate(`../aprende/cursos/${props.name}`)}} type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Inscripto correctamente Click aqui para continuar
+                   
                         </button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">

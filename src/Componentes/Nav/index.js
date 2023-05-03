@@ -8,6 +8,8 @@ import { useAuthr } from "../../Login/peticion";
 import './Nav.css'
 import profileImg from '../../assets/img/profileImages/308005691_464884012340731_7728597009113021700_n.jpg'
 import {leer} from '../../dataBases/db'
+import { Col, Container, Row } from "react-bootstrap";
+
 
 function Nav(){
     const [searchMenu, setSearchMenu] = React.useState(true);
@@ -79,6 +81,13 @@ console.log(getCourses)
         }
     }
 
+    let foto=false;
+  try{
+   foto= localStorage.getItem('profileImg')
+  }catch{
+
+  }
+const [search, setSearch]= React.useState(false)
     return(
         <React.Fragment>
         <nav className="navbar navbar-dark navbar-expand-md sticky-top navbar-shrink py-3 " id="mainNav">
@@ -87,36 +96,39 @@ console.log(getCourses)
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi bi-code-slash">
                         <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z">
                         </path>
-                    </svg></span><span>Castelán Carpinteyro</span></Link>
+                    </svg></span>Cursos </Link>{search?'':<span><img onClick={()=>setSearch(!search)} src='https://cdn-icons-png.flaticon.com/512/2311/2311526.png' style={{width:'30px'}}/> </span>}
                     <button onClick={cerrarAbrir} data-bs-toggle="collapse" className="navbar-toggler" data-bs-target="#navcol-1"><span className="visually-hidden">Toggle
                     navigation</span><span className="navbar-toggler-icon"></span></button>
             <div className={`collapse navbar-collapse ${show}`} id="navcol-1">
                 <ul className="navbar-nav mx-auto">
-              {/*  <li className="nav-item">  <Link className="nav-link" to={'/'}> Inicio</Link></li> */} 
+         
                     <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/aprende'}>Programación</Link></li>
-                    <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/'}> Servicios</Link></li>
-                    <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/'}> Productos</Link></li>
+                    <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/servicios'}> Servicios</Link></li>
+                   {/* <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/'}> Productos</Link></li>*/}
                     <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/software'}> software</Link></li>
                 {(auth.user?.name)? <li className="nav-item" onClick={cerrarAbrir}>  <Link className="nav-link" to={'/admin'}> Agrega Articulos</Link></li>:''}
-                 {(auth.user?.name )? " ": <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/register'}>Sign Up</Link></li> } 
+                 {(auth.user?.name )?  ' ': <li className="nav-item" onClick={cerrarAbrir}><Link className="nav-link" to={'/register'}>Sign Up</Link></li> } 
                  {(auth.user?.name)? <li class="nav-item dropdown no-arrow"  onClick={menu}>
                             <div class="nav-item dropdown no-arrow">
                                 <a class="dropdown-toggle nav-link show" aria-expanded="true" data-bs-toggle="dropdown" >
                                     <span class="d-none d-lg-inline me-2 text-gray-600 small">{auth.user.name}</span>
-                                 <img onClick={menu}  class="border rounded-circle img-profile text-dark" src={profileImg}/></a>
+                                 <img onClick={menu}  class="border rounded-circle img-profile text-dark" src={foto?foto:profileImg}/></a>
                                 <div class={`dropdown-menu shadow dropdown-menu-end animated--grow-in ${showMenues} bg-light`}>
                                 <Link to='/perfil'>  <a class="dropdown-item"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400 "></i>&nbsp;Profile</a></Link>
                                     <Link to='/profile/information'> <a class="dropdown-item" ><i class="fas fa-cogs fa-sm fa-fw me-2 "></i>&nbsp;Settings</a></Link>
-                                    <a class="dropdown-item" ><i class="fas fa-list fa-sm fa-fw me-2 "></i>&nbsp;Activity log</a>
+                                 {/*}   <a class="dropdown-item" ><i class="fas fa-list fa-sm fa-fw me-2 "></i>&nbsp;Activity log</a> */}
                                     <div class="dropdown-divider"></div><a class="dropdown-item"  onClick={salir} ><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 "></i >&nbsp;Logout</a>
                                 </div>
                             </div>
+                               
                         </li>:<div className="div1-efecto"><Link  className="btn btn-primary shadow div2-efecto" role="button" to={'/login'}>Iniciar sesión</Link></div>}
                 </ul>
-
+                
             </div>
         </div>
     </nav>
+    <Container ><Row ><Col className="col">{!search?'':<><input className='form1 '/><button className="btn btn-primary shadow d-inline-block ">Buscar</button><span><img onClick={()=>setSearch(!search)} src='https://cdn-icons-png.flaticon.com/512/271/271220.png' style={{width:'20px'}}/> </span></>}</Col></Row></Container>
+    
     </React.Fragment>
     )
 }

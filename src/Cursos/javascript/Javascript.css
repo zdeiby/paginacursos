@@ -4,15 +4,15 @@
     width: 40px;
     height: 40px;
     background-color: blue;
-    font-size: 50px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     
 }
 .contenedor{
-   display: flex;
-   justify-content: center;
+  display: flex;
 }
 
 .ocultar:hover{

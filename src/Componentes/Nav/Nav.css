@@ -11,3 +11,21 @@
   .img-profile{
     width: 30px;
   }
+
+  .form1{
+
+    
+      width: 60%;
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #2d2c38;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      appearance: none;
+      border-radius: 1rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+  }

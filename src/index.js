@@ -19,6 +19,9 @@ import { Cursos } from './Cursos/Cursos';
 import { Config } from './Config';
 import { Profile } from './Profile';
 import { AprendeJavascript } from './Cursos/javascript/Javascript';
+import { Servicios } from './Servicios';
+import { FormServices } from './FormServices';
+
 
 
 
@@ -37,11 +40,14 @@ root.render(
                 <Route path='/software' element={ <Software/>} ></Route>
                 <Route path='/admin' element={<AdminSend></AdminSend>} ></Route> 
                 <Route path='/aprende' element={ <Aprende/>} ></Route>
-                <Route path='/aprende/cursos/sql' element={ <AprendeJavascript url='DFg1V-rO6Pg' title='Curso de SQL completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
-                <Route path='/aprende/cursos/javascript' element={ <AprendeJavascript  url='z95mZVUcJ-E' title='Curso de Javascript JUNIOR' title1='Parte 1'  title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
-                <Route path='/aprende/cursos/css' element={ <AprendeJavascript url='OWKXEJN67FE' title='Curso de CSS completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
-                <Route path='/aprende/cursos/html' element={ <AprendeJavascript url='kN1XP-Bef7w' title='Curso de HTML completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
-                <Route path='/aprende/cursos/bootstrap' element={ <AprendeJavascript url='QCw0L6FupQ0' title='Curso de BOOTSTRAP 5 completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
+                <Route path='/servicios' element={<Servicios/>}></Route>
+                <Route path='/paginacursos' element={<App/>} ></Route>
+                <Route path='/servicios/:slug' element={<FormServices></FormServices>}></Route>
+                <Route path='/aprende/cursos/sql' element={ <AprendeJavascript slug='sql'  url='DFg1V-rO6Pg' title='Curso de SQL completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
+                <Route path='/aprende/cursos/javascript' element={ <AprendeJavascript slug='JavaScript'  url='z95mZVUcJ-E' title='Curso de Javascript JUNIOR' title1='Parte 1'  title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
+                <Route path='/aprende/cursos/css' element={ <AprendeJavascript  slug='CSS' url='OWKXEJN67FE' title='Curso de CSS completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
+                <Route path='/aprende/cursos/html' element={ <AprendeJavascript slug='HTML'  url='kN1XP-Bef7w' title='Curso de HTML completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
+                <Route path='/aprende/cursos/bootstrap' element={ <AprendeJavascript slug='Bootstrap'  url='QCw0L6FupQ0' title='Curso de BOOTSTRAP 5 completo' title1='Parte 1' title2='Parte 2' title3='Parte 3' title4='Parte 4' title5='Parte 5' title6='Parte 6' title7='Parte 7' title8='Parte 8' title9='Fin'/>} ></Route>
                 <Route path='/perfil' element={ <Profile/>} ></Route>
                 <Route path='/profile/:slug' element={ <Config/>} ></Route>
                 <Route path='/aprende/cursos' element={ <Cursos/>} ></Route>

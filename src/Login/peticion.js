@@ -24,7 +24,8 @@ function AuthProvider({children}){
        
     }
     const logout=() =>{
-        localStorage.clear();
+        localStorage.removeItem('date');
+        localStorage.removeItem('cursos');
         setUser(null);
         navigate('/')
     }

@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.bae3cfc9.css",
-    "main.js": "/static/js/main.589f2d9d.js",
-    "static/media/maquetadoHTML-banner.png": "/static/media/maquetadoHTML-banner.c5387949d0394dd9113b.png",
-    "static/media/hero-background-technology.jpg": "/static/media/hero-background-technology.5691be3df1a3b7f0554e.jpg",
-    "static/media/hero-background-photography.jpg": "/static/media/hero-background-photography.a2257aec08646991607d.jpg",
-    "static/media/hero-background-nature.jpg": "/static/media/hero-background-nature.b289539996759fc63401.jpg",
-    "static/media/curso-javascript-banner.jpg": "/static/media/curso-javascript-banner.3c9c46359a684582d02b.jpg",
-    "static/media/308005691_464884012340731__n.jpg": "/static/media/308005691_464884012340731_7728597009113021700_n.8daf78926754aa32dd90.jpg",
-    "static/media/NotFound.jpg": "/static/media/NotFound.5385389d563708f1add6.jpg",
-    "index.html": "/index.html",
-    "main.bae3cfc9.css.map": "/static/css/main.bae3cfc9.css.map",
-    "main.589f2d9d.js.map": "/static/js/main.589f2d9d.js.map"
+    "main.css": "/paginacursos/static/css/main.5c20456d.css",
+    "main.js": "/paginacursos/static/js/main.ee0ebabf.js",
+    "static/media/maquetadoHTML-banner.png": "/paginacursos/static/media/maquetadoHTML-banner.c5387949d0394dd9113b.png",
+    "static/media/hero-background-technology.jpg": "/paginacursos/static/media/hero-background-technology.5691be3df1a3b7f0554e.jpg",
+    "static/media/hero-background-photography.jpg": "/paginacursos/static/media/hero-background-photography.a2257aec08646991607d.jpg",
+    "static/media/hero-background-nature.jpg": "/paginacursos/static/media/hero-background-nature.b289539996759fc63401.jpg",
+    "static/media/curso-javascript-banner.jpg": "/paginacursos/static/media/curso-javascript-banner.3c9c46359a684582d02b.jpg",
+    "static/media/308005691_464884012340731__n.jpg": "/paginacursos/static/media/308005691_464884012340731_7728597009113021700_n.8daf78926754aa32dd90.jpg",
+    "static/media/NotFound.jpg": "/paginacursos/static/media/NotFound.5385389d563708f1add6.jpg",
+    "index.html": "/paginacursos/index.html",
+    "main.5c20456d.css.map": "/paginacursos/static/css/main.5c20456d.css.map",
+    "main.ee0ebabf.js.map": "/paginacursos/static/js/main.ee0ebabf.js.map"
   },
   "entrypoints": [
-    "static/css/main.bae3cfc9.css",
-    "static/js/main.589f2d9d.js"
+    "static/css/main.5c20456d.css",
+    "static/js/main.ee0ebabf.js"
   ]
 }

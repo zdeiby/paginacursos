@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form(){
+function Form(props){
     const [inp, setInp]=React.useState('');
 
     function datos(e){
@@ -23,7 +23,7 @@ function Form(){
             <div className="row mb-5">
                 <div className="col-md-8 col-xl-6 text-center mx-auto">
                     <p className="fw-bold text-success mb-2">Contacto</p>
-                    <h2 className="fw-bold">Podemos resolver tus dudas</h2>
+                    <h2 className="fw-bold">{props.title}</h2>
                 </div>
             </div>
             <div className="row d-flex justify-content-center">
@@ -34,7 +34,7 @@ function Form(){
                             <div className="mb-3"><input  onChange={datos} className="form-control" type="text" id="name-1" name="name" placeholder="Nombre"/></div>
                           
                             <div className="mb-3"><input onChange={datos} className="form-control" type="email" id="email-1" name="email" placeholder="Email"/></div>
-                            <div className="mb-3"><textarea onChange={datos} className="form-control" id="message-1" name="message" rows="6" placeholder="Mensaje"></textarea></div>
+                            <div className="mb-3"><textarea onChange={datos} className="form-control" id="message-1" name="message" rows="6" placeholder="Describenos mejor que tipo de servicio requieres y que necesitas realizar o puedes escribir a los contactos dejados al lado"></textarea></div>
                             <div><button className="btn btn-primary shadow d-block w-100" type="submit">Enviar</button></div>
                         </form>
                     </div>
@@ -47,7 +47,7 @@ function Form(){
                                 </svg></div>
                             <div className="px-2">
                                 <h6 className="fw-bold mb-0">Teléfono</h6>
-                                <p className="text-muted mb-0">+527979773095</p>
+                                <p className="text-muted mb-0">+573046758241</p>
                             </div>
                         </div>
                         <div className="d-flex align-items-center p-3">
@@ -56,7 +56,7 @@ function Form(){
                                 </svg></div>
                             <div className="px-2">
                                 <h6 className="fw-bold mb-0">Email</h6>
-                                <p className="text-muted mb-0">contacto@castelancarpinteyro.com</p>
+                                <p className="text-muted mb-0">deibygj@hotmail.com</p>
                             </div>
                         </div>
                         <div className="d-flex align-items-center p-3">

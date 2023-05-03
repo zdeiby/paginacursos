@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import React from 'react'
 import { useAuth } from "../Menu/BlogData"
 import { Link, useNavigate } from "react-router-dom";
-import { leer, modificar, postear } from "../dataBases/db";
+import { borrar, leer, modificar, postear } from "../dataBases/db";
 
 
 function Enviar(){
@@ -13,7 +13,9 @@ function Enviar(){
   const [data2, setData2]=React.useState(false)
   const [n, setn]=React.useState(0)
   const [states, setState]=React.useState(false);
+  const [state1, setState1]=React.useState(false);
   const [edit, setEdit]=React.useState(false);
+  const [borrado, setBorrado]=React.useState(true);
 
   async function enviarA(info) {
     postear(info,'articles')
@@ -28,7 +30,7 @@ function Enviar(){
               }catch{
 
               }})
-  },[])
+  },[borrado])
   
     let ref= React.useRef();
     let arr=[];
@@ -91,7 +93,18 @@ console.log(data)
      actualizar(id, edit)
      navigate('../aprende/articulos')
      }
+     function borrarD(e){
+        let recorte = parseInt(e.target.value);
+        if(window.confirm(`¿Quieres eliminar este articulo? ${e.target.value}`)){
+          borrar(recorte, 'articles')
+          leer('articles')
+          setBorrado(new Date())
+  
+        }else{
+          console.log("no pudiste papu, te falta fuerza")
+        }
 
+     }
     return(
         <>
         <Container className="text-center pt-3">
@@ -103,6 +116,16 @@ console.log(data)
          <label>Por cada numero que agregue sale un campo de texto y otro de imagen, si no desea colocar una imagen puede
           dejarlo en blanco 
          </label>
+         <button onClick={()=>{setState1(true)} } className='mt-4  mb-3 btn btn-primary shadow d-block w-100 mb-4'>Click si quieres eliminar un articulo</button>
+         {state1 ?<> <label className='mt-4  mb-3 text-success'>Eliminar articulos publicados</label>
+         <select onChange={borrarD}>
+          {datos?datos.map(articles => (
+            <>
+             <option >{articles._id}   {articles.title} </option></>
+          )):''}  
+
+          </select>
+          </>:''}
         
           </Col>
          <Col><button onClick={()=>{setState(true); setn(5)}  } className='mt-4  mb-3 btn btn-primary shadow d-block w-100 mb-4'>Click si quieres editar un articulo</button>

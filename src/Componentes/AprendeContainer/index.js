@@ -28,10 +28,10 @@ function AprendeContainer(){
             <div className="py-5 p-lg-5">
                 <div className="row row-cols-1 row-cols-md-2 mx-auto estilo" >
 
-                    <Cards patch={DB} text='Diseña, crea, y administra bases de datos para conectarlas a tu sitio.' title='Bases de datos'></Cards>
-                    <Cards2 patch={HT} text='Crea el DOM de tus páginas web con etiquetas de HTML5 de forma profesional.' title='Maquetado HTML'></Cards2>
-                    <Cards patch={Servidores} text='Aquí habrá guías para la administración de servidores; basado en Plesk Obsidian en Ubuntu.' title='Servidores'></Cards>
-                    <Cards2 patch={correo}text='Integra envíos automáticos y manuales de correos electrónicos en tus páginas y en tu servidor. Configura el webmail.' title='Correo electrónico'> </Cards2>
+                    <Cards patch={DB} text='Diseña, crea, y administra bases de datos para conectarlas a tu sitio.' title='Bases de datos' url=''></Cards>
+                    <Cards2 patch={HT} text='Crea el DOM de tus páginas web con etiquetas de HTML5 de forma profesional.' title='Maquetado HTML' url=''></Cards2>
+                    <Cards patch={Servidores} text='Aquí habrá guías para la administración de servidores; basado en Plesk Obsidian en Ubuntu.' url='' title='Servidores'></Cards>
+                    <Cards2 patch={correo}text='Integra envíos automáticos y manuales de correos electrónicos en tus páginas y en tu servidor. Configura el webmail.' url='' title='Correo electrónico'> </Cards2>
 
                  </div>
              </div> 

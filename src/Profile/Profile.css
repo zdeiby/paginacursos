@@ -23,6 +23,7 @@ header {
   .cover-photo img {
     width: 100%;
     height: auto;
+    
   }
   
   .profile-photo {
@@ -48,34 +49,46 @@ header {
     padding: 20px;
 
   }
-  .skills1{
-    border: 0.5px solid white;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background: #3a3a3a;
- 
-}  
 
-.skills2{
-    border: 0.5px solid white;
-    border-radius: 20px;
-    background: #2d2d2d;
-}  
-.skills{
-    border: 0.5px solid white;
-    border-radius: 20px;
-    background: #2d2d2d;
-}  
-.skills2:hover{
-    background:#3c3b3b;
-}
-.stars{
-    color:yellow
-  
+.aboutMe{
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 10px;
 }
 
-svg:hover{
-  background-color: rgb(41, 243, 142);
+.courses {
+  display: flex
+}
+
+.percent{
+
+  border: 1px solid rgb(2, 243, 159);
+  border-radius: 30px;
+  background-color:rgb(11, 247, 164)
+}
+
+
+.profile-photo-container {
+  position: relative;
+
+}
+
+.profile-photo-circle {
+  position: absolute;
+  top: 103px;
+  left: 99px;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: transparent;
+  z-index: 1;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo-circle:hover{
+  background: rgb(192, 189, 189);
 }

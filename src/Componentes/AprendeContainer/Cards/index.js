@@ -1,5 +1,6 @@
 import React from "react";
 import './Cards.css'
+import { Link } from "react-router-dom";
 
 
 function Cards(props){
@@ -13,7 +14,7 @@ function Cards(props){
                                 <path d={props.patch}></path>
                             </svg></div>
                         <h5 className="fw-bold card-title">{props.title}</h5>
-                        <p className="text-muted card-text mb-4">{props.text}</p><button className="btn btn-primary shadow" type="button">Learn more</button>
+                        <p className="text-muted card-text mb-4">{props.text}</p><Link to={`aprende/cursos/${props.url}`}><button className="btn btn-primary shadow" type="button">Learn more</button></Link>
                     </div>
                 </div>
             </div>
