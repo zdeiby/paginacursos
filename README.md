@@ -1,4 +1,4 @@
-## Visita la web en https://pruebas-react.castelancarpinteyro.com/](https://zdeiby.github.io/paginacursos/
+## Visita la web en https://zdeiby.github.io/paginacursos/
 
 ![image](https://user-images.githubusercontent.com/111442309/225583413-beceb1ea-e175-4a03-8f7b-e99e6f241486.png)
 
